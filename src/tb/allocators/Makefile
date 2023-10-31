@@ -10,5 +10,8 @@ separable_input_first_allocator:
 switch_allocator:
 	make -f switch_allocator.mk
 
+verdi:
+	make -f mesh.mk verdi
+
 clean:
 	make -f separable_input_first_allocator.mk clean

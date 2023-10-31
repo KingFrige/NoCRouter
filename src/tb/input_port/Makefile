@@ -10,5 +10,8 @@ input_port:
 rc_unit:
 	make -f rc_unit.mk
 
+verdi:
+	make -f mesh.mk verdi
+
 clean:
 	make -f rc_unit.mk clean

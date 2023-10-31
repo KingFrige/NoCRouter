@@ -20,10 +20,11 @@ DW_DIR = $(SYNOPSYS)/dw/sim_ver
 
 VCS_FLAGS += -full64 -sverilog +lint=all +libext+.sv +lint=all,noVCDE +v2k +libext+.v -Mupdate
 VCS_FLAGS += -timescale=1ns/1ps -l vcs.log 
-VCS_FLAGS += -debug_access+all -kdb +vcs+fsdbon
+VCS_FLAGS += -debug_access+all
+#VCS_FLAGS += -kdb +vcs+fsdbon
 
-SIMV_ARGS += +vcs+lic+wait -l simv.log
-SIMV_ARGS += +fsdb+struct=on +fsdb+packedmda=on +fsdbfile+dump.fsdb
+SIMV_ARGS += +vcs+lic+wait -l simv.log -ucli -do $(PROJECT_DIR)/src/tb/dump.tcl
+# SIMV_ARGS += +fsdb+struct=on +fsdb+packedmda=on +fsdbfile+dump.fsdb
 
 INT_CTRL=
 
